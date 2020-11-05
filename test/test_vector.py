@@ -1,4 +1,4 @@
-from empy.vector import Vector
+from empy import Vector
 from numpy.testing import assert_allclose
 
 
