@@ -1,2 +1,2 @@
 # empy
-Fundamentals of Electromagnetics with Python
+Fundamentals of Electromagnetic with Python
