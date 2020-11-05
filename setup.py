@@ -16,7 +16,7 @@ EMAIL = "codequote@163.com"
 AUTHOR = "WilliamCodeBox"
 REQUIRES_PYTHON = ">=3.6.0"
 VERSION = "1.0.0"
-LICENSE = "GPL3.0"
+LICENSE = "GNU General Public License v3 (GPLv3)"
 
 # Required packages for this module to be executed
 REQUIRED = []
