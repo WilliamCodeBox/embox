@@ -80,5 +80,9 @@ class Vector(object):
         """Check if self is equal to other"""
         return True if self._x == other.x and self._y == other.y and self._z == other.z else False
 
+    def __neg__(self):
+        """the negative of self"""
+        return Vector(-self.x, -self.y, -self.z)
+
     def __str__(self):
         return f"Vector({self.x}, {self.y}, {self.z})"
