@@ -25,7 +25,9 @@ REQUIRED = [
 ]
 
 # Optional packages
-EXTRAS = {}
+EXTRAS = {
+    "plot": ["matplotlib~=3.3.2"]
+}
 
 # ######################## Functionalities ########################
 here = os.path.abspath(os.path.dirname(__file__))
