@@ -19,10 +19,13 @@ VERSION = "1.0.0"
 LICENSE = "GNU General Public License v3 (GPLv3)"
 
 # Required packages for this module to be executed
-REQUIRED = []
+REQUIRED = [
+    "numpy~=1.19.2",
+    "scipy~=1.5.2"
+]
 
 # Optional packages
-EXTRAS = []
+EXTRAS = {}
 
 # ######################## Functionalities ########################
 here = os.path.abspath(os.path.dirname(__file__))
