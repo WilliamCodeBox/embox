@@ -9,10 +9,10 @@ from shutil import rmtree
 from setuptools import Command, setup, find_packages
 
 # Package meta information
-NAME = "empy"
+NAME = "embox"
 DESCRIPTION = "Fundamentals of Electromagnetic with Python"
-URL = "https://github.com/WilliamCodeBox/empy"
 EMAIL = "codequote@163.com"
+URL = "https://github.com/WilliamCodeBox/empy4"
 AUTHOR = "WilliamCodeBox"
 REQUIRES_PYTHON = ">=3.6.0"
 VERSION = "1.0.0"
