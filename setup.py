@@ -27,7 +27,8 @@ REQUIRED = [
 
 # Optional packages
 EXTRAS = {
-    "plot": ["matplotlib~=3.3.2"]
+    "plot": ["matplotlib~=3.3.2"],
+    "test": ["coverage~=5.3.0"]
 }
 
 # ######################## Functionalities ########################
