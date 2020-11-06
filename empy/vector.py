@@ -67,6 +67,9 @@ class Vector(object):
         """Calculate the addition of self and other"""
         return Vector(self._x + other.x, self._y + other.y, self._z + other.z)
 
+    def __sub__(self, other):
+        return Vector(self.x - other.x, self.y - other.y, self.z - other.z)
+
     def __mul__(self, other: Union[int, float, "Vector"]) -> Union[float, "Vector"]:
         if isinstance(other, int) or isinstance(other, float):
             return Vector(self.x * other, self.y * other, self.z * other)

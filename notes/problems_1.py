@@ -114,8 +114,8 @@ def ex7():
     y = np.linspace(-2, 2, 30)
 
     X, Y = np.meshgrid(x, y)
-    U = Y*Y # x-components
-    V = -X # y-components
+    U = Y * Y  # x-components
+    V = -X  # y-components
 
     fig, ax = plt.subplots(1, 1)
     ax.quiver(x, y, U, V, units="width")
@@ -144,7 +144,59 @@ def ex8():
 
 def ex9():
     """
-    
+    Find the scalar product of A = 3u_x + 4u_y + 5u_z and B = -5u_x + 4u_y - 3u_z.
+    Determine the angle between A and B.
+    :return:
+    """
+    A = Vector(3, 4, 5)
+    B = Vector(-5, 4, -3)
+    C = A.dot(B)
+
+    print(f"Scalar product of {A} and {B} is {C}")
+
+    proj = A.projection(B)
+    angle = np.arccos(proj / A.mag)
+
+    print(f"Angle between A and B is {angle * 180 / np.pi} in degrees")
+
+
+def ex10():
+    """
+    For vectors A = u_x + u_y + u_z, B = 2ux + 2uy + 2uz and C = 3ux + 3uy + 3uz,
+    show that A X (B X C) = B(A*C) - C(A*B)
+    :return:
+    """
+    A = Vector(1, 1, 1)
+    B = Vector(2, 2, 2)
+    C = Vector(3, 3, 3)
+
+    lhs = A.cross(B.cross(C))
+    rhs = B * A.dot(C) - C * A.dot(B)
+
+    print(f"A X (B X C) = {lhs}")
+    print(f"B(A*C) - C(A*B) = {rhs}")
+
+
+def ex11():
+    """
+    A = (1, 3, 5), B = (2, 4, 6), C = (3, 4, 5)
+    show that A X (B X C) = B(A*C) - C(A*B)
+    :return:
+    """
+    A = Vector(1, 3, 5)
+    B = Vector(2, 4, 6)
+    C = Vector(3, 4, 5)
+
+    lhs = A.cross(B.cross(C))
+    rhs = B * A.dot(C) - C * A.dot(B)
+
+    print(f"A X (B X C) = {lhs}")
+    print(f"B(A*C) - C(A*B) = {rhs}")
+
+
+def ex12():
+    """
+
     :return:
     """
 
@@ -157,4 +209,7 @@ if __name__ == '__main__':
     # ex5()
     # ex6()
     # ex7()
-    ex8()
+    # ex8()
+    # ex9()
+    ex10()
+    ex11()
