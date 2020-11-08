@@ -1,4 +1,4 @@
-from empy.coordinates import Cartesian
+from empy.math.coordinates import Cartesian
 from scipy.constants import pi
 
 

@@ -3,7 +3,7 @@ This module contains some plot helper functions
 """
 import matplotlib.pyplot as plt
 
-from .vector import Vector
+from empy.math.vector import Vector
 
 
 def plot_vector_addition(ax: plt.Axes, v1: Vector, v2: Vector, **kwargs):
