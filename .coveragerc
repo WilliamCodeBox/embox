@@ -7,3 +7,6 @@ omit =
 
 [report]
 show_missing=True
+
+[html]
+directory = tests/coverage_html_report

@@ -8,7 +8,9 @@ SCRIPT_ABS_PATH=$(dirname ${SCRIPT_ABS_PATH})
 
 # switch to root folder
 ROOT=$(readlink -f ${SCRIPT_ABS_PATH}/../)
-cd $ROOT
+# shellcheck disable=SC2164
+cd "$ROOT"
 
-coverage run --source empy -m pytest
+coverage run -m pytest
 coverage report -m
+coverage html
