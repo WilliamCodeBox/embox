@@ -63,6 +63,9 @@ class Vector(object):
         z_component = self.x * other.y - self.y * other.x
         return Vector(x_component, y_component, z_component)
 
+    def __len__(self):
+        return 3
+
     def __add__(self, other: "Vector") -> "Vector":
         """Calculate the addition of self and other"""
         return Vector(self._x + other.x, self._y + other.y, self._z + other.z)
