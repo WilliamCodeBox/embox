@@ -82,6 +82,9 @@ class Vector(object):
     def __rmul__(self, other: Union[int, float, "Vector"]) -> Union[float, "Vector"]:
         return self.__mul__(other)
 
+    def __truediv__(self, other: Union[int, float]) -> "Vector":
+        return Vector(self.x / other, self.y / other, self.z / other)
+
     def __eq__(self, other):
         """Check if self is equal to other"""
         return True if self._x == other.x and self._y == other.y and self._z == other.z else False

@@ -3,7 +3,7 @@ branch=True
 source = 
     empy
 omit =
-    __*__.py
+    empy/__version__.py
 
 [report]
 show_missing=True
