@@ -1,1 +1,1 @@
-from .charge import Charge
+from .charge import PointCharge
