@@ -63,6 +63,18 @@ class Vector(object):
         z_component = self.x * other.y - self.y * other.x
         return Vector(x_component, y_component, z_component)
 
+    def to_cylindrical(self) -> np.ndarray:
+        """
+
+        :return:
+        """
+        phi = np.arctan2(self.y, self.x)
+        mat = np.array([[np.cos(phi), -np.sin(phi), 0.0],
+                        [np.sin(phi), np.cos(phi), 0.0],
+                        [0.0, 0.0, 1.0]])
+        cylindrical_components = np.dot(mat, np.array([self.x, self.y, self.z]))
+        return cylindrical_components
+
     def __len__(self):
         return 3
 
@@ -88,6 +100,12 @@ class Vector(object):
     def __eq__(self, other):
         """Check if self is equal to other"""
         return True if self._x == other.x and self._y == other.y and self._z == other.z else False
+
+    def __le__(self, other):
+        return True if self.x <= other.x and self.y <= other.y and self.z <= other.z else False
+
+    def __lt__(self, other):
+        return True if self.x < other.x and self.y < other.y and self.z < other.z else False
 
     def __neg__(self):
         """the negative of self"""
