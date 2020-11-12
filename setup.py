@@ -20,15 +20,15 @@ LICENSE = "GNU General Public License v3 (GPLv3)"
 
 # Required packages for this module to be executed
 REQUIRED = [
-    "numpy~=1.19.2",
-    "scipy~=1.5.2",
-    "mpi4py~=3.0.3"
+    "numpy>=1.19.2",
+    "scipy>=1.5.2",
+    "mpi4py>=3.0.3"
 ]
 
 # Optional packages
 EXTRAS = {
-    "postprocessor": ["matplotlib~=3.3.2", "SciencePlots~=1.0.6"],
-    "test": ["coverage~=5.3.0"]
+    "postprocessor": ["matplotlib>=3.3.2", "SciencePlots>=1.0.6"],
+    "test": ["coverage>=5.3.0"]
 }
 
 # ######################## Functionalities ########################
