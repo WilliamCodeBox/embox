@@ -1,4 +1,4 @@
-from empy import Vector
+from embox import Vector
 from numpy.testing import assert_allclose
 
 
@@ -38,5 +38,3 @@ def test_vector_perpendicular():
     a = Vector(1, 2, 3)
     b = 3 * a
     assert a.parallel_to(b)
-
-

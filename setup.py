@@ -12,7 +12,7 @@ from setuptools import Command, setup, find_packages
 NAME = "embox"
 DESCRIPTION = "Fundamentals of Electromagnetic with Python"
 EMAIL = "codequote@163.com"
-URL = "https://github.com/WilliamCodeBox/empy4"
+URL = "https://github.com/WilliamCodeBox/embox"
 AUTHOR = "WilliamCodeBox"
 REQUIRES_PYTHON = ">=3.6.0"
 VERSION = "1.0.6"
@@ -103,7 +103,7 @@ setup(
     packages=find_packages(
         exclude=["tests", "*.tests", "*.test.*", "tests.*", "notes"]),
     # if only single module exists, use `py_modules` instead of `packages`
-    # py_modules = ["empy"]
+    # py_modules = ["embox"]
 
     # entry_point={
     #     "console_scripts": ["mycli=mymodule:cli"],

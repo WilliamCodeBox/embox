@@ -1,5 +1,5 @@
 import numpy as np
-from empy import Vector
+from embox import Vector
 
 
 def z(x: float, y: float) -> float:

@@ -1,4 +1,4 @@
-# empy
+# embox
 
 Fundamentals of Electromagnetic with Python
 
@@ -19,9 +19,9 @@ Fundamentals of Electromagnetic with Python
 
 ## Testing
 
-`empy` is tested by using the `pytest`[https://pypi.org/project/pytest/] package, and the test coverage is checked by using the `coverage`[https://pypi.org/project/coverage/] package.
+`embox` is tested by using the `pytest`[https://pypi.org/project/pytest/] package, and the test coverage is checked by using the `coverage`[https://pypi.org/project/coverage/] package.
 
-A `.coveragerc` config file is created and located in the `empy` package root dir. This config file stores the sub commands `run` and `report` of `coverage`.
+A `.coveragerc` config file is created and located in the `embox` package root dir. This config file stores the sub commands `run` and `report` of `coverage`.
 
 Run the following command to test coverage
 

@@ -6,8 +6,8 @@ from typing import Union
 
 import matplotlib.pyplot as plt
 import numpy as np
-from empy import Vector
-from empy import plot_vector_addition
+from embox import Vector
+from embox import plot_vector_addition
 
 
 def ex1():
@@ -204,7 +204,8 @@ def ex12():
 if __name__ == '__main__':
     # ex1()
     ex2()
-    print(f"-50 degrees in Celsius equals to {ex3(-50)} degrees in Fahrenheit.")
+    print(
+        f"-50 degrees in Celsius equals to {ex3(-50)} degrees in Fahrenheit.")
     print(f"35 yards equals to {ex4(35)} meters")
     # ex5()
     # ex6()

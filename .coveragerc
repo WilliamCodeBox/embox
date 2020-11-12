@@ -1,9 +1,9 @@
 [run]
 branch=True
 source = 
-    empy
+    embox
 omit =
-    empy/__version__.py
+    embox/__version__.py
 
 [report]
 show_missing=True

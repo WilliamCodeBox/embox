@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from empy.electrostatic import LineCharge
-from empy.math import Vector
+from embox.electrostatic import LineCharge
+from embox.math import Vector
 from numpy.testing import assert_allclose
 
 

@@ -1,6 +1,6 @@
 import numpy as np
-from empy.electrostatic import PointCharge
-from empy.math import Vector
+from embox.electrostatic import PointCharge
+from embox.math import Vector
 from numpy.testing import assert_allclose
 from numpy.testing import assert_raises
 
