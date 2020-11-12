@@ -15,7 +15,7 @@ EMAIL = "codequote@163.com"
 URL = "https://github.com/WilliamCodeBox/empy4"
 AUTHOR = "WilliamCodeBox"
 REQUIRES_PYTHON = ">=3.6.0"
-VERSION = "1.0.3"
+VERSION = "1.0.4"
 LICENSE = "GNU General Public License v3 (GPLv3)"
 
 # Required packages for this module to be executed
@@ -27,7 +27,7 @@ REQUIRED = [
 
 # Optional packages
 EXTRAS = {
-    "plot": ["matplotlib~=3.3.2"],
+    "postprocessor": ["matplotlib~=3.3.2", "SciencePlots~=1.0.6"],
     "test": ["coverage~=5.3.0"]
 }
 
@@ -76,7 +76,8 @@ class UploadCommand(Command):
             pass
 
         self.status("Building Source and Wheel (universal) distribution...")
-        os.system("{0} setup.py sdist bdist_wheel --universal".format(sys.executable))
+        os.system(
+            "{0} setup.py sdist bdist_wheel --universal".format(sys.executable))
 
         self.status("Uploading the package to PyPI via Twine")
         os.system("twine upload dist/*")
@@ -99,7 +100,8 @@ setup(
     author_email=EMAIL,
     python_requires=REQUIRES_PYTHON,
     url=URL,
-    packages=find_packages(exclude=["tests", "*.tests", "*.test.*", "tests.*", "notes"]),
+    packages=find_packages(
+        exclude=["tests", "*.tests", "*.test.*", "tests.*", "notes"]),
     # if only single module exists, use `py_modules` instead of `packages`
     # py_modules = ["empy"]
 
