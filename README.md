@@ -2,6 +2,13 @@
 
 Fundamentals of Electromagnetic with Python
 
+## Install
+
+```bash
+> pip search embox
+> pip install embox
+```
+
 ## Vector
 
 ## Coordinates
