@@ -3,7 +3,7 @@ This module contains some plot helper functions
 """
 import matplotlib.pyplot as plt
 import numpy as np
-from embox.math.vector import Vector
+from ..math.vector import Vector
 from matplotlib import ticker
 
 plt.rcParams['font.serif'] = ["JetBrains Mono", "Times New Roman"]
