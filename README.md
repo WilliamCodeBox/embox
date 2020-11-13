@@ -9,15 +9,9 @@ Fundamentals of Electromagnetic with Python
 > pip install embox
 ```
 
-## Vector
+## Developer
 
-## Coordinates
-
-## Electrostatic
-
-### Electrostatic Charge
-
-## Testing
+### Testing
 
 `embox` is tested by using the `pytest`[https://pypi.org/project/pytest/] package, and the test coverage is checked by using the `coverage`[https://pypi.org/project/coverage/] package.
 
