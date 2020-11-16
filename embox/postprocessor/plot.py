@@ -3,6 +3,7 @@ This module contains some plot helper functions
 """
 
 from datetime import datetime
+from typing import Iterable, Tuple, Any
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -10,7 +11,29 @@ import numpy as np
 from ._config import rcParams, formatter
 from ..math.vector import Vector
 
-plt.rcParams = rcParams
+
+def subplots(nrows: int = 1, ncols: int = 1, sharex: str = False, sharey: str = False, **fig_kw) -> Tuple[
+    plt.figure, plt.Axes]:
+    plt.rcParams = rcParams
+
+    fig, axes = plt.subplots(nrows=nrows, ncols=ncols, sharex=sharex, sharey=sharey, **fig_kw)
+
+    if isinstance(axes, Iterable):
+        for ax in axes:
+            ax.yaxis.set_major_formatter(formatter)
+            ax.xaxis.set_major_formatter(formatter)
+    else:
+        axes.yaxis.set_major_formatter(formatter)
+        axes.xaxis.set_major_formatter(formatter)
+
+    return fig, axes
+
+
+def subplot2grid(shape: Tuple[int, int], loc: Tuple[int, int], rowspan: int = 1, colspan: int = 1, **kwargs: Any):
+    ax = plt.subplot2grid(shape=shape, loc=loc, rowspan=rowspan, colspan=colspan, **kwargs)
+    ax.yaxis.set_major_formatter(formatter)
+    ax.xaxis.set_major_formatter(formatter)
+    return ax
 
 
 def plot_vector_addition(ax: plt.Axes, v1: Vector, v2: Vector, **kwargs):
