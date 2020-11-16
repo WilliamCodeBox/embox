@@ -15,7 +15,7 @@ EMAIL = "codequote@163.com"
 URL = "https://github.com/WilliamCodeBox/embox"
 AUTHOR = "WilliamCodeBox"
 REQUIRES_PYTHON = ">=3.6.0"
-VERSION = "1.0.8"
+VERSION = "1.0.10"
 LICENSE = "GNU General Public License v3 (GPLv3)"
 
 # Required packages for this module to be executed
@@ -27,7 +27,7 @@ REQUIRED = [
 
 # Optional packages
 EXTRAS = {
-    "postprocessor": ["matplotlib>=3.3.2", "SciencePlots>=1.0.6"],
+    "postprocessor": ["matplotlib>=3.3.2"],
     "test": ["coverage>=5.3.0"]
 }
 

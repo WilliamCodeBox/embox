@@ -6,16 +6,11 @@ from datetime import datetime
 
 import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib import ticker
 
+from ._config import rcParams, formatter
 from ..math.vector import Vector
 
-plt.rcParams['font.serif'] = ["JetBrains Mono", "Times New Roman"]
-plt.rc('text', usetex=True)
-
-formatter = ticker.ScalarFormatter(useMathText=True)
-formatter.set_scientific(True)
-formatter.set_powerlimits((-1, 1))
+plt.rcParams = rcParams
 
 
 def plot_vector_addition(ax: plt.Axes, v1: Vector, v2: Vector, **kwargs):
@@ -82,21 +77,20 @@ def plot_curve(x: np.ndarray, y: np.ndarray, *args, **kwargs):
         kwargs.pop("dpi")
     else:
         dpi = 100
-    with plt.style.context(['science', 'ieee', "grid", "retro"]):
-        fig, ax = plt.subplots(1, 1, figsize=(16, 9))
-        ax.plot(x_scale * x, y_scale * y, **kwargs)
-        if len(args) != 0:
-            for ii in range(0, len(args), 2):
-                ax.plot(x_scale * args[ii], y_scale * args[ii + 1], **kwargs)
-        ax.yaxis.set_major_formatter(formatter)
-        ax.set_xlabel(x_label, fontsize=20)
-        ax.set_ylabel(y_label, fontsize=20)
-        ax.set_title(fig_title, fontsize=20)
-        ax.xaxis.set_tick_params(labelsize=16)
-        ax.yaxis.set_tick_params(labelsize=16)
-        plt.tight_layout()
-        plt.savefig(fig_name, dpi=dpi)
-        plt.close()
+    fig, ax = plt.subplots(1, 1, figsize=(16, 9))
+    ax.plot(x_scale * x, y_scale * y, **kwargs)
+    if len(args) != 0:
+        for ii in range(0, len(args), 2):
+            ax.plot(x_scale * args[ii], y_scale * args[ii + 1], **kwargs)
+    ax.yaxis.set_major_formatter(formatter)
+    ax.set_xlabel(x_label, fontsize=20)
+    ax.set_ylabel(y_label, fontsize=20)
+    ax.set_title(fig_title, fontsize=20)
+    ax.xaxis.set_tick_params(labelsize=16)
+    ax.yaxis.set_tick_params(labelsize=16)
+    plt.tight_layout()
+    plt.savefig(fig_name, dpi=dpi)
+    plt.close()
 
 
 def plot_ax(ax: plt.Axes, x: np.ndarray, y: np.ndarray, **kwargs) -> plt.Axes:
