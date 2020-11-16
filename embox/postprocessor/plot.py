@@ -13,7 +13,7 @@ from ..math.vector import Vector
 
 
 def subplots(nrows: int = 1, ncols: int = 1, sharex: str = False, sharey: str = False, **fig_kw) -> Tuple[
-    plt.figure, plt.Axes]:
+             plt.figure, plt.Axes]:
     plt.rcParams = rcParams
 
     fig, axes = plt.subplots(nrows=nrows, ncols=ncols, sharex=sharex, sharey=sharey, **fig_kw)

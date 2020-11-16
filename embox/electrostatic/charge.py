@@ -142,7 +142,7 @@ class LineCharge(Charge):
             self._B = end
 
     def force_on(self, other):
-        pass
+        raise NotImplementedError
 
     def e_field_intensity(self, r: Vector, dx) -> Vector:
         unit_vec = (self.end - self.start).unit

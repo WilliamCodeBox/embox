@@ -38,5 +38,3 @@ class Grid(object):
         if parallel:
             self._id = MPI.COMM_WORLD.rank
             self._num_procs = MPI.COMM_WORLD.size
-            self._cart_comm = MPI.COMM_WORLD.Create_cart(self.find_best_deploy(), (1, 1, 1))
-
