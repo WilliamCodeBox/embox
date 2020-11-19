@@ -3,6 +3,7 @@
 [![](https://tokei.rs/b1/github/XAMPPRocky/tokei)](https://github.com/WilliamCodeBox/embox)
 [![Build Status](https://travis-ci.org/WilliamCodeBox/embox.svg?branch=main)](https://travis-ci.org/WilliamCodeBox/embox)
 
+
 [![PyPI version](https://badge.fury.io/py/embox.svg)](https://badge.fury.io/py/embox)
 [![GitHub version](https://badge.fury.io/gh/WilliamCodeBox%2Fembox.svg)](https://badge.fury.io/gh/WilliamCodeBox%2Fembox)
 
@@ -21,7 +22,7 @@ Fundamentals of Electromagnetic with Python
 
 ### Testing
 
-`embox` is tested by using the `pytest`[https://pypi.org/project/pytest/] package, and the test coverage is checked by using the `coverage`[https://pypi.org/project/coverage/] package.
+`embox` is tested by using the [pytest](https://pypi.org/project/pytest/) package, and the test coverage is checked by using the [coverage](https://pypi.org/project/coverage/) package.
 
 A `.coveragerc` config file is created and located in the `embox` package root dir. This config file stores the sub commands `run` and `report` of `coverage`.
 
