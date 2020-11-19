@@ -1,4 +1,11 @@
 import pygmsh as msh
+import gmsh
+
+def gmsh_usage():
+
+    geo = gmsh.model.occ()
+    geo.addPoint(0.0, 0.0, 0.0, 0.1, 1)
+    mesh = geo.mesh()
 
 def meshio_logo():
     geo = msh.occ.Geometry()
@@ -14,8 +21,4 @@ def meshio_logo():
     geo.boolean_difference(container, geo.boolean_union([letter_i, letter_o, i_dot]))
 
     mesh = geo.generate_mesh()
-    ref = 81.9131851877
-    assert abs(compute_volume(mesh) - ref) < 1.0E-2 * ref
-    return mesh
 
-def compute_volume()
