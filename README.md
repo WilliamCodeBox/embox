@@ -1,7 +1,7 @@
 [![](https://tokei.rs/b1/github/XAMPPRocky/tokei)](https://github.com/WilliamCodeBox/embox)
 
-[![star this repo](http://githubbadges.com/star.svg?user=boennemann&repo=badges&style=flat)](https://github.com/WilliamCodeBox/embox)
-[![fork this repo](http://githubbadges.com/fork.svg?user=boennemann&repo=badges&style=flat)](https://github.com/WilliamCodeBox/embox)
+[![star this repo](http://githubbadges.com/star.svg?user=WilliamCodeBox&repo=embox&style=flat)](https://github.com/WilliamCodeBox/embox)
+[![fork this repo](http://githubbadges.com/fork.svg?user=WilliamCodeBox&repo=embox&style=flat)](https://github.com/WilliamCodeBox/embox)
 
 # embox
 
