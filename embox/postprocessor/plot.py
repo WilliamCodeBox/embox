@@ -100,6 +100,8 @@ def plot_curve(x: np.ndarray, y: np.ndarray, *args, **kwargs):
         kwargs.pop("dpi")
     else:
         dpi = 100
+
+    plt.rcParams = rcParams
     fig, ax = plt.subplots(1, 1, figsize=(16, 9))
     ax.plot(x_scale * x, y_scale * y, **kwargs)
     if len(args) != 0:
@@ -155,13 +157,13 @@ def plot_ax(ax: plt.Axes, x: np.ndarray, y: np.ndarray, **kwargs) -> plt.Axes:
     else:
         fig_title = ""
 
-    with plt.style.context(['science', 'ieee', "retro"]):
-        ax.plot(x_scale * x, y_scale * y, **kwargs)
-        ax.yaxis.set_major_formatter(formatter)
-        ax.set_xlabel(x_label, fontsize=14)
-        ax.set_ylabel(y_label, fontsize=14)
-        ax.set_title(fig_title, fontsize=14)
-        ax.grid()
-        ax.xaxis.set_tick_params(labelsize=8)
-        ax.yaxis.set_tick_params(labelsize=8)
+    plt.rcParams = rcParams
+    ax.plot(x_scale * x, y_scale * y, **kwargs)
+    ax.yaxis.set_major_formatter(formatter)
+    ax.set_xlabel(x_label, fontsize=14)
+    ax.set_ylabel(y_label, fontsize=14)
+    ax.set_title(fig_title, fontsize=14)
+    ax.grid()
+    ax.xaxis.set_tick_params(labelsize=8)
+    ax.yaxis.set_tick_params(labelsize=8)
     return ax
