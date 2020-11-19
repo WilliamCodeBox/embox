@@ -8,13 +8,10 @@ Coulomb's Law states that the force F between two point charges Q1 and Q2 is:
 from abc import ABC, abstractmethod
 from typing import Union
 
-from pygmsh.common.point import Point
-
 import numpy as np
 
 from .__log__ import logger
 from ..math.vector import Vector
-import pygmsh as msh
 
 
 class Charge(ABC):
@@ -37,7 +34,7 @@ class PointCharge(Charge):
         :param q:
         :param r:
         """
-        super().__init__()
+        super(PointCharge, self).__init__()
         if len(r) != 3:
             raise ValueError("Location Vector must be 3 elements ndarray or an instance of Vector.")
 
@@ -208,4 +205,3 @@ class LineCharge(Charge):
             loc += increment
             total_field += field
         return total_field
-
