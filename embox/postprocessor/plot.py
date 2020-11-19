@@ -8,7 +8,7 @@ from typing import Iterable, Tuple, Any
 import matplotlib.pyplot as plt
 import numpy as np
 
-from ._config import rcParams, formatter
+from .__config__ import rcParams, formatter
 from ..math.vector import Vector
 
 
