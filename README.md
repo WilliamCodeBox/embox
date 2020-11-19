@@ -1,3 +1,5 @@
+[![](https://tokei.rs/b1/github/XAMPPRocky/tokei)](https://github.com/WilliamCodeBox/embox).
+
 # embox
 
 Fundamentals of Electromagnetic with Python
