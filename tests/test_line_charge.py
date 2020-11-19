@@ -13,7 +13,7 @@ def test_plot_line_segments():
     unit_vec = (B - A).unit
     increment = dx * unit_vec
 
-    N = int(np.floor((B - A).mag / dx))
+    N = int(np.floor((B - A).length / dx))
 
     fig, ax = plt.subplots(1, 1)
     for _ in range(N):

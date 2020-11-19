@@ -36,6 +36,3 @@ class Point(object):
             else:
                 self._loc = Vector(*loc)
 
-    def __getitem__(self, index: int):
-        assert 0 <= index <= 2
-        return self.location[index]

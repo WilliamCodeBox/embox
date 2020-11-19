@@ -31,17 +31,17 @@ class Line(BaseLine):
         BaseLine.__init__(self, [start, end])
 
     @property
-    def start(self) -> Point:
+    def start_point(self) -> Point:
         return self.points[0]
 
-    @start.setter
-    def start(self, start: Point):
+    @start_point.setter
+    def start_point(self, start: Point):
         self.points[0] = start
 
     @property
-    def end(self) -> Point:
+    def end_point(self) -> Point:
         return self.points[1]
 
-    @end.setter
-    def end(self, end: Point):
+    @end_point.setter
+    def end_point(self, end: Point):
         self.points[1] = end

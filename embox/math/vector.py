@@ -33,12 +33,12 @@ class Vector(object):
         return np.sqrt(self._x ** 2 + self._y ** 2 + self._z ** 2)
 
     @property
-    def mag(self) -> float:
+    def length(self) -> float:
         return self.norm2
 
     @property
     def unit(self) -> Vector:
-        return Vector(self._x / self.mag, self._y / self.mag, self._z / self.mag)
+        return Vector(self._x / self.length, self._y / self.length, self._z / self.length)
 
     def dot(self, other: "Vector") -> _Scalar:
         """Dot product of self and other"""
@@ -50,11 +50,11 @@ class Vector(object):
 
     def parallel_to(self, other: "Vector") -> bool:
         """Check if self is parallel to other"""
-        return np.allclose(self.dot(other), self.mag * other.mag)
+        return np.allclose(self.dot(other), self.length * other.length)
 
     def projection(self, other: "Vector") -> float:
         """Calculate the projection of self onto other"""
-        return self.dot(other) / other.mag
+        return self.dot(other) / other.length
 
     def cross(self, other: "Vector") -> "Vector":
         """Cross product of self and other"""
