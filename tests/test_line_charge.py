@@ -3,6 +3,7 @@ import numpy as np
 from embox.electrostatic import LineCharge
 from embox.math import Vector
 from numpy.testing import assert_allclose
+from embox.geomesh.point import Point
 
 
 def test_plot_line_segments():
@@ -12,7 +13,7 @@ def test_plot_line_segments():
     unit_vec = (B - A).unit
     increment = dx * unit_vec
 
-    N = int(np.floor((B - A).mag / dx))
+    N = int(np.floor((B - A).length / dx))
 
     fig, ax = plt.subplots(1, 1)
     for _ in range(N):
@@ -23,8 +24,8 @@ def test_plot_line_segments():
 
 
 def test_e_field_intensity():
-    A = Vector(0, 0, 0)
-    B = Vector(1, 0, 0)
+    A = Point([0, 0, 0])
+    B = Point([1, 0, 0])
     C = Vector(0.5, 1, 0)
 
     rho = 1E-8

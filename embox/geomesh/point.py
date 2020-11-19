@@ -35,3 +35,4 @@ class Point(object):
                 self._loc = Vector(*loc, 0.0)
             else:
                 self._loc = Vector(*loc)
+

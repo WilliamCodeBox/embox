@@ -15,10 +15,10 @@ def test_loc():
 
 def test_mag():
     c = PointCharge(1.0, Vector(0, 0, 0))
-    assert c.mag == 1.0
+    assert c.coulomb == 1.0
 
-    c.mag = 2.0
-    assert c.mag == 2.0
+    c.coulomb = 2.0
+    assert c.coulomb == 2.0
 
 
 def test_force_on_one_vs_one():
@@ -26,10 +26,10 @@ def test_force_on_one_vs_one():
     c2 = PointCharge(1.0, np.array([1, 0, 0]))
 
     f12 = c1.force_on(c2)
-    assert_allclose(f12.mag, 9.0E9)
+    assert_allclose(f12.length, 9.0E9)
 
     f21 = c2.force_on(c1)
-    assert_allclose(f21.mag, f12.mag)
+    assert_allclose(f21.length, f12.length)
 
     assert f12 == -f21
 
