@@ -30,7 +30,7 @@ def test_e_field_intensity():
     rho = 1E-8
     line_charge = LineCharge(rho, A, B)
 
-    field = line_charge.e_field_intensity(C, 1.0 / 100000.0)
+    field = line_charge.e_field_intensity(C, dx=1.0 / 100000.0)
     k = 9.0E9
     ret = (k * rho) / (np.sqrt(1.0 + 0.5 * 0.5))
     assert_allclose(field.x, 0.0, atol=1E-3)

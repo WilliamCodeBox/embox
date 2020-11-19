@@ -1,4 +1,4 @@
-from embox import Vector
+from embox.math import Vector
 from numpy.testing import assert_allclose
 
 
