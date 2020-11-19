@@ -1,22 +1,16 @@
 import numpy as np
+from numpy.testing import assert_allclose
+
 from embox.electrostatic import PointCharge
 from embox.math import Vector
-from numpy.testing import assert_allclose
-from numpy.testing import assert_raises
-
-
-def test_init_raise_value_error():
-    with assert_raises(ValueError):
-        c = PointCharge(1.0, np.ndarray([1, 2, 3, 4]))
-        c = PointCharge(1.0, np.ndarray([1, 2]))
 
 
 def test_loc():
     c = PointCharge(1.0, Vector(0, 0, 0))
-    assert c.loc == Vector(0, 0, 0)
+    assert c.location == Vector(0, 0, 0)
 
-    c.loc = Vector(1, 0, 0)
-    assert c.loc == Vector(1, 0, 0)
+    c.location = Vector(1, 0, 0)
+    assert c.location == Vector(1, 0, 0)
 
 
 def test_mag():
@@ -49,9 +43,9 @@ def test_force_on_two_vs_one():
     f23 = c2.force_on(c3)
 
     ret = f13 + f23
-    assert_allclose(ret.x, -6.512*1E-3, rtol=1E-3)
-    assert_allclose(ret.y, -3.713*1E-3, rtol=1E-3)
-    assert_allclose(ret.z, 7.509*1E-3, rtol=1E-3)
+    assert_allclose(ret.x, -6.512 * 1E-3, rtol=1E-3)
+    assert_allclose(ret.y, -3.713 * 1E-3, rtol=1E-3)
+    assert_allclose(ret.z, 7.509 * 1E-3, rtol=1E-3)
 
 
 def test_e_field_intensity():
