@@ -8,6 +8,8 @@ Coulomb's Law states that the force F between two point charges Q1 and Q2 is:
 from abc import ABC, abstractmethod
 from typing import Union
 
+from pygmsh.common.point import Point
+
 import numpy as np
 
 from .__log__ import logger
