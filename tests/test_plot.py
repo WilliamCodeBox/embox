@@ -29,5 +29,4 @@ def test_plot_ax():
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(5, 3), dpi=300)
     plot_ax(ax1, t, y)
     plot_ax(ax2, t, z)
-    plt.tight_layout()
     # plt.show()
