@@ -11,6 +11,7 @@ from typing import Union, NoReturn
 import numpy as np
 
 from .__log__ import logger
+from ..geomesh.line import Line
 from ..geomesh.point import Point
 from ..math.vector import Vector
 
@@ -18,7 +19,6 @@ from ..math.vector import Vector
 class Charge(ABC):
     def __init__(self, density: Union[int, float]) -> NoReturn:
         self._density = float(density)
-        pass
 
     @property
     def rho(self) -> float:
@@ -45,7 +45,7 @@ class PointCharge(Charge, Point):
         """
         Charge.__init__(self, density)
         Point.__init__(self, loc)
-        
+
     @property
     def mag(self):
         return self.rho
@@ -68,7 +68,7 @@ class PointCharge(Charge, Point):
         force = k * self.mag * other.mag / (r * r)
         return force * directional_vec / r
 
-    def e_field_intensity(self, r: Union[Vector, np.ndarray], **kwargs) -> Vector:
+    def e_field_intensity(self, r: Vector, **kwargs) -> Vector:
         """
         The electric field intensity at point r due to self which is located at self.loc
 
@@ -85,51 +85,20 @@ class PointCharge(Charge, Point):
         return intensity * directional_vec / distance
 
 
-class LineCharge(Charge):
-    def __init__(self, rho: Union[int, float], start: Union[Vector, np.ndarray], end: Union[Vector, np.ndarray]):
+class LineCharge(Charge, Line):
+    def __init__(self, rho: Union[int, float], start: Point, end: Point):
         """
         A Straight line charge with uniform charge density rho extending from start point to end point
         :param rho: the uniform charge density
         :param start: start point of the line
         :param end: end point of the line
         """
-        super().__init__(rho)
-
-        if isinstance(start, np.ndarray):
-            self._A = Vector(start[0], start[1], start[2])
-        else:
-            self._A = start
-
-        if isinstance(end, np.ndarray):
-            self._B = Vector(end[0], end[1], end[2])
-        else:
-            self._B = end
-
-    @property
-    def start(self) -> Vector:
-        return self._A
-
-    @start.setter
-    def start(self, start: Union[Vector, np.ndarray]):
-        if isinstance(start, np.ndarray):
-            self._A = Vector(start[0], start[1], start[2])
-        else:
-            self._A = start
-
-    @property
-    def end(self) -> Vector:
-        return self._B
-
-    @end.setter
-    def end(self, end: Union[Vector, np.ndarray]):
-        if isinstance(end, np.ndarray):
-            self._B = Vector(end[0], end[1], end[2])
-        else:
-            self._B = end
+        Charge.__init__(self, rho)
+        Line.__init__(self, start, end)
 
     @property
     def unit_vec(self):
-        return (self.end - self.start).unit
+        return (self.end.location - self.start.location).unit
 
     def force_on(self, point_charge: PointCharge, **kwargs):
         """
@@ -146,14 +115,14 @@ class LineCharge(Charge):
 
         increment = dx * self.unit_vec
 
-        N = int(np.floor((self.end - self.start).mag / dx))
+        N = int(np.floor((self.end.location - self.start.location).mag / dx))
         logger.debug(f"Total line segments is {N}")
         logger.debug(f"Line charge force on {point_charge}")
         logger.debug(f"Unit vector along the line charge is {self.unit_vec}")
         logger.debug(f"Increment vector along the line charge is {increment}")
 
         total_force = Vector(0, 0, 0)
-        loc = self.start
+        loc = self.start.location
         for _ in range(N):
             q = PointCharge(self.rho * dx, loc)
             field = q.force_on(point_charge)
@@ -176,13 +145,13 @@ class LineCharge(Charge):
 
         increment = dx * self.unit_vec
 
-        N = int(np.floor((self.end - self.start).mag / dx))
+        N = int(np.floor((self.end.location - self.start.location).mag / dx))
         logger.debug(f"Total line segments is {N}")
         logger.debug(f"Line charge e-field intensity at {r}")
         logger.debug(f"Unit vector along the line charge is {self.unit_vec}")
         logger.debug(f"Increment vector along the line charge is {increment}")
         total_field = Vector(0, 0, 0)
-        loc = self.start
+        loc = self.start.location
         for _ in range(N):
             q = PointCharge(self.rho * dx, loc)
             field = q.e_field_intensity(r)

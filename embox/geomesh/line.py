@@ -1,27 +1,47 @@
 """
 Fundamental straight line object in cartesian coordinate system
 """
-from typing import Union
+from typing import List
 
-import numpy as np
-
-from ..math.vector import Vector
+from .point import Point
 
 
-class Line(object):
-    def __init__(self, start: Union[Vector, list, np.ndarray], end: Union[Vector, list, np.ndarray]):
+class BaseLine(object):
+    dim = 1
+
+    def __init__(self, points: List[Point]):
+        self._points = points
+
+    @property
+    def points(self):
+        return self._points
+
+    @points.setter
+    def points(self, points: List[Point]):
+        self._points = points
+
+
+class Line(BaseLine):
+    def __init__(self, start: Point, end: Point):
         """
         Straight line form start to end
         :param start: the start point of the line
         :param end: the end point of the line
         """
-        self._start = start
-        self._end = end
+        BaseLine.__init__(self, [start, end])
 
     @property
-    def start(self):
-        return self._start
+    def start(self) -> Point:
+        return self.points[0]
 
     @start.setter
-    def start(self, start: Union[Vector, list, np.ndarray]):
-        self._start = start
+    def start(self, start: Point):
+        self.points[0] = start
+
+    @property
+    def end(self) -> Point:
+        return self.points[1]
+
+    @end.setter
+    def end(self, end: Point):
+        self.points[1] = end

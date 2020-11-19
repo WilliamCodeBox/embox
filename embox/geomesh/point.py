@@ -9,6 +9,8 @@ from ..math.vector import Vector
 
 
 class Point(object):
+    dim = 0
+
     def __init__(self, loc: Union[Vector, list, np.ndarray]):
         self._set_loc(loc)
 
@@ -33,3 +35,7 @@ class Point(object):
                 self._loc = Vector(*loc, 0.0)
             else:
                 self._loc = Vector(*loc)
+
+    def __getitem__(self, index: int):
+        assert 0 <= index <= 2
+        return self.location[index]
