@@ -13,7 +13,7 @@ class Point(object):
         self._set_loc(loc)
 
     @property
-    def location(self) -> list:
+    def location(self) -> np.ndarray:
         return self._loc
 
     @location.setter
@@ -27,6 +27,6 @@ class Point(object):
         if len(loc) > 3:
             raise ValueError("loc must be 3-element list or ndarray")
         if len(loc) == 2:
-            self._loc = [*loc, 0.0]
+            self._loc = np.array([*loc, 0.0])
         else:
-            self._loc = loc
+            self._loc = np.array([*loc])

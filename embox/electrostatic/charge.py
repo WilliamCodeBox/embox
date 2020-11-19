@@ -6,17 +6,27 @@ Coulomb's Law states that the force F between two point charges Q1 and Q2 is:
 (3) Inversely proportional to the square of the distance R between them
 """
 from abc import ABC, abstractmethod
-from typing import Union
+from typing import Union, NoReturn
 
 import numpy as np
 
 from .__log__ import logger
+from ..geomesh.point import Point
 from ..math.vector import Vector
 
 
 class Charge(ABC):
-    def __init__(self):
+    def __init__(self, density: Union[int, float]) -> NoReturn:
+        self._density = float(density)
         pass
+
+    @property
+    def density(self) -> float:
+        return self._density
+
+    @density.setter
+    def density(self, density: Union[int, float]) -> NoReturn:
+        self._density = density
 
     @abstractmethod
     def force_on(self, other, **kwargs):
@@ -27,31 +37,16 @@ class Charge(ABC):
         raise NotImplementedError
 
 
-class PointCharge(Charge):
-    def __init__(self, q: Union[int, float], r: Union[Vector, np.ndarray]):
+class PointCharge(Charge, Point):
+    def __init__(self, density: Union[int, float], loc: Union[Vector, np.ndarray]):
         """
         Construct a charge by specifying its location and magnitude.
-        :param q:
-        :param r:
+        :param loc: the location of the point
         """
-        super(PointCharge, self).__init__()
-        if len(r) != 3:
-            raise ValueError("Location Vector must be 3 elements ndarray or an instance of Vector.")
+        super(PointCharge, self).__init__(density)
+        super(PointCharge, self).__init__(loc)
 
-        if isinstance(r, np.ndarray):
-            self._loc = Vector(r[0], r[1], r[2])
-        else:
-            self._loc = r
-
-        self._mag = q
-
-    @property
-    def loc(self):
-        return self._loc
-
-    @loc.setter
-    def loc(self, r: Union[Vector, np.ndarray]):
-        self._loc = r
+        self._mag = density
 
     @property
     def mag(self):
@@ -68,7 +63,7 @@ class PointCharge(Charge):
         :param other: another Charge
         :return: The force between self and other
         """
-        directional_vec = other.loc - self.loc
+        directional_vec = other.location - self.location
         r = directional_vec.mag
 
         k = 9.0E9
