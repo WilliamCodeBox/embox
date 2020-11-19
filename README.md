@@ -5,8 +5,6 @@
 
 [![PyPI version](https://badge.fury.io/py/embox.svg)](https://badge.fury.io/py/embox)
 [![GitHub version](https://badge.fury.io/gh/WilliamCodeBox%2Fembox.svg)](https://badge.fury.io/gh/WilliamCodeBox%2Fembox)
-[![star this repo](http://githubbadges.com/star.svg?user=WilliamCodeBox&repo=embox&style=flat)](https://github.com/WilliamCodeBox/embox)
-[![fork this repo](http://githubbadges.com/fork.svg?user=WilliamCodeBox&repo=embox&style=flat)](https://github.com/WilliamCodeBox/embox)
 
 # embox
 
