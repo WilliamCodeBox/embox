@@ -1,5 +1,8 @@
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
+[![Open Source Love](https://badges.frapsoft.com/os/gpl/gpl.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
 [![](https://tokei.rs/b1/github/XAMPPRocky/tokei)](https://github.com/WilliamCodeBox/embox)
 
+[![GitHub version](https://badge.fury.io/gh/boennemann%2Fbadges.svg)](http://badge.fury.io/gh/boennemann%2Fbadges)
 [![star this repo](http://githubbadges.com/star.svg?user=WilliamCodeBox&repo=embox&style=flat)](https://github.com/WilliamCodeBox/embox)
 [![fork this repo](http://githubbadges.com/fork.svg?user=WilliamCodeBox&repo=embox&style=flat)](https://github.com/WilliamCodeBox/embox)
 
