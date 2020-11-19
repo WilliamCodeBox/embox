@@ -1,12 +1,10 @@
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
 [![Open Source Love](https://badges.frapsoft.com/os/gpl/gpl.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
 [![](https://tokei.rs/b1/github/XAMPPRocky/tokei)](https://github.com/WilliamCodeBox/embox)
-[![Build Status](https://travis-ci.org/WilliamCodeBox/embox.svg?branch=master)](https://travis-ci.org/WilliamCodeBox/embox)
+[![Build Status](https://travis-ci.org/WilliamCodeBox/embox.svg?branch=main)](https://travis-ci.org/WilliamCodeBox/embox)
 
 [![PyPI version](https://badge.fury.io/py/embox.svg)](https://badge.fury.io/py/embox)
 [![GitHub version](https://badge.fury.io/gh/WilliamCodeBox%2Fembox.svg)](https://badge.fury.io/gh/WilliamCodeBox%2Fembox)
-[![star this repo](http://githubbadges.com/star.svg?user=WilliamCodeBox&repo=embox&style=flat)](https://github.com/WilliamCodeBox/embox)
-[![fork this repo](http://githubbadges.com/fork.svg?user=WilliamCodeBox&repo=embox&style=flat)](https://github.com/WilliamCodeBox/embox)
 
 # embox
 

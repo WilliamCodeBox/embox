@@ -9,8 +9,6 @@ from ..math.vector import Vector
 
 
 class Point(object):
-    dim = 0
-
     def __init__(self, loc: Union[Vector, list, np.ndarray]):
         self._set_loc(loc)
 
