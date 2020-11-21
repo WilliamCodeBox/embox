@@ -1,3 +1,2 @@
-from .charge import PointCharge
-from .charge import LineCharge
-
+from .linecharge import LineCharge
+from .pointcharge import PointCharge

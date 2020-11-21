@@ -45,3 +45,12 @@ class Line(BaseLine):
     @end_point.setter
     def end_point(self, end: Point):
         self.points[1] = end
+
+
+class Spline(BaseLine):
+    def __init__(self, points: List[Point]):
+        """
+        create a b-spline based on given control points
+        :param points: the data points defining a curve
+        """
+        BaseLine.__init__(self, points)
