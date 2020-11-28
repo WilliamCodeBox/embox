@@ -3,7 +3,7 @@ from typing import Union
 import matplotlib.pyplot as plt
 import numpy as np
 
-from embox.geomesh.vector import Vector
+from ..geomesh.vector import Vector
 from .basecharge import Charge
 from ..geomesh.point import Point
 
