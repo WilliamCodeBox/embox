@@ -6,7 +6,7 @@ from typing import Union, NoReturn
 
 import numpy as np
 
-from embox.geomesh.vector import Vector
+from ..geomesh.vector import Vector
 
 
 class Charge(ABC):

@@ -13,7 +13,7 @@ from .basecharge import Charge
 from .pointcharge import PointCharge
 from ..geomesh.line import Line
 from ..geomesh.point import Point
-from embox.geomesh.vector import Vector
+from ..geomesh.vector import Vector
 
 
 class LineCharge(Charge, Line):
